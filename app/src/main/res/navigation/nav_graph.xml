@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashBoardFragment">
+
+    <fragment
+        android:id="@+id/dashBoardFragment"
+        android:name="com.marufalam.preschoollearning.fragments.dashboard.DashBoardFragment"
+        android:label="fragment_dash_board"
+        tools:layout="@layout/fragment_dash_board" >
+        <action
+            android:id="@+id/action_dashBoardFragment_to_alphabetFragment"
+            app:destination="@id/alphabetFragment"
+            app:popUpTo="@id/dashBoardFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_weeksFragment"
+            app:destination="@id/weeksFragment"
+            app:popUpTo="@id/dashBoardFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_colorFragment"
+            app:destination="@id/colorFragment"
+            app:popUpTo="@id/dashBoardFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_bodyPartFragment"
+            app:destination="@id/bodyPartFragment"
+            app:popUpTo="@id/dashBoardFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/dashBoardFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_numberFragment"
+            app:destination="@id/numberFragment"
+            app:popUpTo="@id/dashBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alphabetFragment"
+        android:name="com.marufalam.preschoollearning.fragments.alphabet.AlphabetFragment"
+        android:label="fragment_alphabet"
+        tools:layout="@layout/fragment_alphabet" />
+    <fragment
+        android:id="@+id/weeksFragment"
+        android:name="com.marufalam.preschoollearning.fragments.weeks.WeeksFragment"
+        android:label="fragment_weeks"
+        tools:layout="@layout/fragment_weeks" />
+    <fragment
+        android:id="@+id/colorFragment"
+        android:name="com.marufalam.preschoollearning.fragments.color.ColorFragment"
+        android:label="fragment_color"
+        tools:layout="@layout/fragment_color" />
+    <fragment
+        android:id="@+id/bodyPartFragment"
+        android:name="com.marufalam.preschoollearning.fragments.bodyparts.bodyPartFragment"
+        android:label="fragment_body_part"
+        tools:layout="@layout/fragment_body_part" />
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.marufalam.preschoollearning.fragments.quiz.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" />
+    <fragment
+        android:id="@+id/numberFragment"
+        android:name="com.marufalam.preschoollearning.fragments.number.NumberFragment"
+        android:label="fragment_number"
+        tools:layout="@layout/fragment_number" />
+    <fragment
+        android:id="@+id/alphbetPagerFragment"
+        android:name="com.marufalam.preschoollearning.fragments.alphabet.AlphabetPagerFragment"
+        android:label="fragment_alphbet_pager"
+        tools:layout="@layout/fragment_alphbet_pager" />
+</navigation>

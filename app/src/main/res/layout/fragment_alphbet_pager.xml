@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingTop="@dimen/_40sdp"
+    android:paddingStart="@dimen/_40sdp"
+    android:paddingEnd="@dimen/_38sdp"
+    android:paddingBottom="@dimen/_75sdp"
+    android:background="@drawable/background"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/capital"
+        android:layout_width="117dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="48dp"
+        android:src="@drawable/a"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.494" />
+
+    <ImageView
+        android:id="@+id/small"
+        android:layout_width="63dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="85dp"
+        android:src="@drawable/small_a"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/capital"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572" />
+
+    <ImageView
+        android:id="@+id/objectImg"
+        android:layout_width="234dp"
+        android:layout_height="198dp"
+        android:src="@drawable/apple"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toEndOf="@+id/capital"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <TextView
+        android:id="@+id/objectText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:text="Apple"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_25ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/capital"
+        app:layout_constraintEnd_toStartOf="@+id/objectImg"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toEndOf="@+id/small" />
+</androidx.constraintlayout.widget.ConstraintLayout>
