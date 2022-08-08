@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.material.tabs.TabLayout;
 import com.marufalam.preschoollearning.R;
+import com.marufalam.preschoollearning.SoundInterfare;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,6 +51,9 @@ public class AlphabetPagerFragment extends Fragment {
         capital.setImageResource(alphabetModel.getCapitalImg());
         small.setImageResource(alphabetModel.getSmallImg());
         objectImg.setImageResource(alphabetModel.getObjectImg());
+        capital.setOnClickListener(view1 -> SoundInterfare.playSound( alphabetModel.alphaSound,getContext()));
+        small.setOnClickListener(view1 -> SoundInterfare.playSound( alphabetModel.alphaSound,getContext()));
+        objectImg.setOnClickListener(view1 -> SoundInterfare.playSound( alphabetModel.objectSound,getContext()));
         return view;
     }
 }

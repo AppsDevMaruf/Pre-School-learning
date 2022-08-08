@@ -5,15 +5,20 @@ public class AlphabetModel {
     int smallImg;
     int objectImg;
     String objectDetail;
+    int alphaSound;
+    int objectSound;
+
 
     public AlphabetModel() {
     }
 
-    public AlphabetModel(int capitalImg, int smallImg, int objectImg, String objectDetail) {
+    public AlphabetModel(int capitalImg, int smallImg, int objectImg, String objectDetail, int alphaSound, int objectSound) {
         this.capitalImg = capitalImg;
         this.smallImg = smallImg;
         this.objectImg = objectImg;
         this.objectDetail = objectDetail;
+        this.alphaSound = alphaSound;
+        this.objectSound = objectSound;
     }
 
     public int getCapitalImg() {
@@ -46,5 +51,21 @@ public class AlphabetModel {
 
     public void setObjectDetail(String objectDetail) {
         this.objectDetail = objectDetail;
+    }
+
+    public int getAlphaSound() {
+        return alphaSound;
+    }
+
+    public void setAlphaSound(int alphaSound) {
+        this.alphaSound = alphaSound;
+    }
+
+    public int getObjectSound() {
+        return objectSound;
+    }
+
+    public void setObjectSound(int objectSound) {
+        this.objectSound = objectSound;
     }
 }
