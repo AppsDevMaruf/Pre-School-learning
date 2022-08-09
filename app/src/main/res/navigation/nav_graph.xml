@@ -59,7 +59,16 @@
         android:id="@+id/quizFragment"
         android:name="com.marufalam.preschoollearning.fragments.quiz.QuizFragment"
         android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" />
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_findOutFragment"
+            app:destination="@id/findOutFragment"
+            app:popUpTo="@id/quizFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_wordMatchingFragment"
+            app:destination="@id/wordMatchingFragment"
+            app:popUpTo="@id/quizFragment" />
+    </fragment>
     <fragment
         android:id="@+id/numberFragment"
         android:name="com.marufalam.preschoollearning.fragments.number.NumberFragment"
@@ -70,4 +79,24 @@
         android:name="com.marufalam.preschoollearning.fragments.alphabet.AlphabetPagerFragment"
         android:label="fragment_alphbet_pager"
         tools:layout="@layout/fragment_alphbet_pager" />
+    <fragment
+        android:id="@+id/findOutFragment"
+        android:name="com.marufalam.preschoollearning.FindOutFragment"
+        android:label="fragment_find_out"
+        tools:layout="@layout/fragment_find_out" >
+        <action
+            android:id="@+id/action_findOutFragment_to_alphabetFindQFragment"
+            app:destination="@id/alphabetFindQFragment"
+            app:popUpTo="@id/findOutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordMatchingFragment"
+        android:name="com.marufalam.preschoollearning.WordMatchingFragment"
+        android:label="fragment_word_matching"
+        tools:layout="@layout/fragment_word_matching" />
+    <fragment
+        android:id="@+id/alphabetFindQFragment"
+        android:name="com.marufalam.preschoollearning.AlphabetFindQFragment"
+        android:label="fragment_alphabet_find_q"
+        tools:layout="@layout/fragment_alphabet_find_q" />
 </navigation>
