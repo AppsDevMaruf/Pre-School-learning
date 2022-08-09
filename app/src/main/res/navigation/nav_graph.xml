@@ -81,7 +81,7 @@
         tools:layout="@layout/fragment_alphbet_pager" />
     <fragment
         android:id="@+id/findOutFragment"
-        android:name="com.marufalam.preschoollearning.FindOutFragment"
+        android:name="com.marufalam.preschoollearning.fragments.quiz.findout.FindOutFragment"
         android:label="fragment_find_out"
         tools:layout="@layout/fragment_find_out" >
         <action
@@ -91,12 +91,12 @@
     </fragment>
     <fragment
         android:id="@+id/wordMatchingFragment"
-        android:name="com.marufalam.preschoollearning.WordMatchingFragment"
+        android:name="com.marufalam.preschoollearning.fragments.quiz.wordmatch.WordMatchingFragment"
         android:label="fragment_word_matching"
         tools:layout="@layout/fragment_word_matching" />
     <fragment
         android:id="@+id/alphabetFindQFragment"
-        android:name="com.marufalam.preschoollearning.AlphabetFindQFragment"
+        android:name="com.marufalam.preschoollearning.fragments.quiz.findout.AlphabetFindQFragment"
         android:label="fragment_alphabet_find_q"
         tools:layout="@layout/fragment_alphabet_find_q" />
 </navigation>

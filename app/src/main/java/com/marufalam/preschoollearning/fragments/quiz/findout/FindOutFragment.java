@@ -1,4 +1,4 @@
-package com.marufalam.preschoollearning;
+package com.marufalam.preschoollearning.fragments.quiz.findout;
 
 import android.os.Bundle;
 
@@ -9,10 +9,13 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import com.marufalam.preschoollearning.R;
 
 
 public class FindOutFragment extends Fragment {
-    CardView alphabetQ,numberQ,weeksQ,bodyPartQ,colorQ;
+    ImageView alphabetQ,numberQ,weeksQ,bodyPartQ,colorQ;
 
 
     public FindOutFragment() {
@@ -32,7 +35,7 @@ public class FindOutFragment extends Fragment {
         colorQ = view.findViewById(R.id.colorQ);
 
         alphabetQ.setOnClickListener(view1 -> {
-            Navigation.findNavController(view).navigate(R.id.action_findOutFragment_to_alphabetFindQFragment);
+            Navigation.findNavController(view1).navigate(R.id.action_findOutFragment_to_alphabetFindQFragment);
         });
 
 

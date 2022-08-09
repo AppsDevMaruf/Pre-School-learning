@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="@dimen/_40sdp"
-        android:paddingLeft="@dimen/_40sdp"
-        android:paddingRight="@dimen/_38sdp"
+        android:paddingStart="@dimen/_40sdp"
+        android:paddingEnd="@dimen/_38sdp"
         android:paddingBottom="@dimen/_75sdp"
         android:orientation="vertical"
         android:background="@drawable/background">

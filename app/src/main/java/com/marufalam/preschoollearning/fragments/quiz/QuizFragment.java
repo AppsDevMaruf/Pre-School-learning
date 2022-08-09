@@ -9,12 +9,13 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.marufalam.preschoollearning.R;
 
 public class QuizFragment extends Fragment {
-CardView findOut;
-CardView wordMatch;
+ImageView findOut,wordMatch;
+
 
     public QuizFragment() {
         // Required empty public constructor
@@ -34,7 +35,7 @@ CardView wordMatch;
 
         });
         wordMatch.setOnClickListener(view1 -> {
-            Navigation.findNavController(view).navigate(R.id.action_quizFragment_to_wordMatchingFragment);
+            Navigation.findNavController(view1).navigate(R.id.action_quizFragment_to_wordMatchingFragment);
 
         });
         return view;

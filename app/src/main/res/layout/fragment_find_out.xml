@@ -11,7 +11,7 @@
     android:paddingEnd="@dimen/_38sdp"
     android:paddingBottom="@dimen/_75sdp"
     android:orientation="horizontal"
-    tools:context=".FindOutFragment" >
+    tools:context=".fragments.quiz.findout.FindOutFragment" >
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
