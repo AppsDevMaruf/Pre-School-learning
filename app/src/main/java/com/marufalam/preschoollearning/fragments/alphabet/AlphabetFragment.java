@@ -1,6 +1,6 @@
 package com.marufalam.preschoollearning.fragments.alphabet;
 
-import android.content.Context;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.marufalam.preschoollearning.R;
 
 import java.util.ArrayList;
@@ -33,11 +32,32 @@ public class AlphabetFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_alphabet, container, false);
 
         alphabetModelList = new ArrayList<>();
-        alphabetModelList.add(new AlphabetModel(R.drawable.a, R.drawable.small_a, R.drawable.apple, "Apple",R.raw.a,R.raw.a_is_for_apple));
-        alphabetModelList.add(new AlphabetModel(R.drawable.b, R.drawable.small_b, R.drawable.boy, "Boy",R.raw.b,R.raw.b_is_for_boy));
-        alphabetModelList.add(new AlphabetModel(R.drawable.c, R.drawable.small_c, R.drawable.cat, "Cat",R.raw.c,R.raw.c_is_for_cat));
-        alphabetModelList.add(new AlphabetModel(R.drawable.d, R.drawable.small_d, R.drawable.duck, "Duck",R.raw.d,R.raw.d_is_for_dog));
-        alphabetModelList.add(new AlphabetModel(R.drawable.e, R.drawable.small_e, R.drawable.egg, "Egg",R.raw.e,R.raw.e_is_for_egg));
+        alphabetModelList.add(new AlphabetModel(R.drawable.a,  R.drawable.apple, R.drawable.apple_t,R.raw.a,R.raw.a_is_for_apple));
+        alphabetModelList.add(new AlphabetModel(R.drawable.b,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.c,  R.drawable.cat, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.d,  R.drawable.duck, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.e,  R.drawable.egg, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.f,  R.drawable.fish, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.g,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.h,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.i,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.j,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.k,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.l,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.m,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.n,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.o,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.p,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.q,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.r,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.s,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.t,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.u,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.v,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.w,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.x,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.y,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
+        alphabetModelList.add(new AlphabetModel(R.drawable.z,  R.drawable.boy, R.drawable.boy_t,R.raw.b,R.raw.b_is_for_boy));
 
 
         viewpager = view.findViewById(R.id.viewpager);

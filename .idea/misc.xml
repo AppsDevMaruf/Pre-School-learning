@@ -6,15 +6,23 @@
         <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/drawable/share_shape.xml" value="0.2595" />
         <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout-land/fragment_dash_board.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout-land/fragment_dash_bord.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout-land/fragment_week_pager.xml" value="0.19046052631578947" />
         <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/category_item_row.xml" value="0.152" />
         <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_alphabet.xml" value="0.2" />
-        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_alphabet_find_q.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_alphabet_find_q.xml" value="0.152" />
         <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_alphbet_pager.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_body_part.xml" value="0.1" />
+        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_color.xml" value="0.23703703703703705" />
         <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_dash_board.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_find_out.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_quiz.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_number.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_pager.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_quiz.xml" value="0.16052631578947368" />
+        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_week_pager.xml" value="0.15986842105263158" />
+        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/fragment_weeks.xml" value="0.18518518518518517" />
         <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/next_btn_shape.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/USER/PreSchoolLearning2/app/src/main/res/layout/time_out_dialog.xml" value="0.253125" />
       </map>
     </option>
   </component>

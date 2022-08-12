@@ -14,51 +14,40 @@
     android:padding="5dp">
 
     <ImageView
-        android:id="@+id/capital"
-        android:layout_width="117dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="48dp"
+        android:id="@+id/alphabet"
+        android:layout_width="159dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="60dp"
         android:src="@drawable/a"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.494" />
-
-    <ImageView
-        android:id="@+id/small"
-        android:layout_width="63dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="85dp"
-        android:src="@drawable/small_a"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/capital"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.572" />
+        app:layout_constraintVertical_bias="0.457" />
 
     <ImageView
         android:id="@+id/objectImg"
         android:layout_width="234dp"
         android:layout_height="198dp"
-        android:src="@drawable/apple"
         android:scaleType="fitXY"
+        android:src="@drawable/apple"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.779"
-        app:layout_constraintStart_toEndOf="@+id/capital"
+        app:layout_constraintHorizontal_bias="0.799"
+        app:layout_constraintStart_toEndOf="@+id/alphabet"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.422" />
+        app:layout_constraintVertical_bias="0.427" />
 
-    <TextView
-        android:id="@+id/objectText"
+    <ImageView
+        android:id="@+id/objectName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:text="Apple"
+        android:layout_height="@dimen/_60sdp"
         android:textColor="@color/black"
         android:textSize="@dimen/_25ssp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/capital"
+        app:layout_constraintBottom_toTopOf="@+id/alphabet"
         app:layout_constraintEnd_toStartOf="@+id/objectImg"
-        app:layout_constraintHorizontal_bias="0.467"
-        app:layout_constraintStart_toEndOf="@+id/small" />
+        app:layout_constraintHorizontal_bias="0.661"
+        app:layout_constraintStart_toEndOf="@+id/alphabet"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "116245337069",
+    "firebase_url": "https://preschool-learning-27cac-default-rtdb.firebaseio.com",
+    "project_id": "preschool-learning-27cac",
+    "storage_bucket": "preschool-learning-27cac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116245337069:android:1e951b6ba6783770e20de4",
+        "android_client_info": {
+          "package_name": "com.marufalam.preschoollearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116245337069-5p1iec2nqd8moel2u9g2nao134bu0can.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3Cjh0H8SiqSadLoCTtIoTg_FhKZpbmqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "116245337069-5p1iec2nqd8moel2u9g2nao134bu0can.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

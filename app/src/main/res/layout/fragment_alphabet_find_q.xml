@@ -11,34 +11,21 @@
     android:paddingBottom="@dimen/_75sdp"
     android:orientation="vertical">
     <RelativeLayout
-        android:background=""
+
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp">
-        <ImageView
+
+        <View
             android:id="@+id/dback"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:background="@drawable/arrow_back"
-            android:backgroundTint="@color/white"
-            android:layout_marginLeft="@dimen/_10sdp"
-            app:tint="@color/white"
-            android:layout_centerVertical="true" />
-        <TextView
-            android:id="@+id/dexit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Exit"
-            android:textStyle="bold"
-            android:textSize="@dimen/_18sdp"
-            android:textColor="@color/white"
-            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/_10sdp"/>
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp" />
 
     </RelativeLayout>
     <com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar
-        android:id="@+id/progress_bar_1"
+        android:id="@+id/progress_bar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -46,11 +33,13 @@
         android:maxHeight="12dp"
         android:minHeight="12dp"
         android:progress="40"
+        android:layout_marginBottom="@dimen/_3sdp"
         app:backgroundColor="@color/red"
         app:progressColor="@color/green"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_gravity="end"
+        android:layout_marginBottom="@dimen/_3sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:background="@drawable/share_shape"
         android:layout_height="wrap_content">
@@ -204,7 +193,7 @@
         android:gravity="center">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Next"
             android:textColor="@color/black"
             android:textSize="@dimen/_20sdp"

@@ -2,9 +2,8 @@ package com.marufalam.preschoollearning.fragments.alphabet;
 
 public class AlphabetModel {
     int capitalImg;
-    int smallImg;
     int objectImg;
-    String objectDetail;
+    int objectDetail;
     int alphaSound;
     int objectSound;
 
@@ -12,9 +11,8 @@ public class AlphabetModel {
     public AlphabetModel() {
     }
 
-    public AlphabetModel(int capitalImg, int smallImg, int objectImg, String objectDetail, int alphaSound, int objectSound) {
+    public AlphabetModel(int capitalImg, int objectImg, int objectDetail, int alphaSound, int objectSound) {
         this.capitalImg = capitalImg;
-        this.smallImg = smallImg;
         this.objectImg = objectImg;
         this.objectDetail = objectDetail;
         this.alphaSound = alphaSound;
@@ -29,14 +27,6 @@ public class AlphabetModel {
         this.capitalImg = capitalImg;
     }
 
-    public int getSmallImg() {
-        return smallImg;
-    }
-
-    public void setSmallImg(int smallImg) {
-        this.smallImg = smallImg;
-    }
-
     public int getObjectImg() {
         return objectImg;
     }
@@ -45,11 +35,11 @@ public class AlphabetModel {
         this.objectImg = objectImg;
     }
 
-    public String getObjectDetail() {
+    public int getObjectDetail() {
         return objectDetail;
     }
 
-    public void setObjectDetail(String objectDetail) {
+    public void setObjectDetail(int objectDetail) {
         this.objectDetail = objectDetail;
     }
 

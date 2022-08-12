@@ -42,17 +42,16 @@ public class AlphabetPagerFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_alphbet_pager, container, false);
 
-        TextView tv = view.findViewById(R.id.objectText);
-        tv.setText(alphabetModel.getObjectDetail());
 
-        ImageView capital = (ImageView) view.findViewById(R.id.capital);
-        ImageView small = (ImageView) view.findViewById(R.id.small);
+        ImageView alphabet = (ImageView) view.findViewById(R.id.alphabet);
+        ImageView objectName = (ImageView) view.findViewById(R.id.objectName);
         ImageView objectImg = (ImageView) view.findViewById(R.id.objectImg);
-        capital.setImageResource(alphabetModel.getCapitalImg());
-        small.setImageResource(alphabetModel.getSmallImg());
+        alphabet.setImageResource(alphabetModel.getCapitalImg());
         objectImg.setImageResource(alphabetModel.getObjectImg());
-        capital.setOnClickListener(view1 -> SoundInterfare.playSound( alphabetModel.alphaSound,getContext()));
-        small.setOnClickListener(view1 -> SoundInterfare.playSound( alphabetModel.alphaSound,getContext()));
+        objectName.setImageResource(alphabetModel.getObjectDetail());
+
+        alphabet.setOnClickListener(view1 -> SoundInterfare.playSound( alphabetModel.alphaSound,getContext()));
+
         objectImg.setOnClickListener(view1 -> SoundInterfare.playSound( alphabetModel.objectSound,getContext()));
         return view;
     }

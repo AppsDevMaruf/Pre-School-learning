@@ -18,6 +18,7 @@ pluginManagement {
 
             }
         }
+
         rootProject.name = "PreSchool Learning"
         include ':app'
     }

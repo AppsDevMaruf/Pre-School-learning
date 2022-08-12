@@ -52,7 +52,7 @@
         tools:layout="@layout/fragment_color" />
     <fragment
         android:id="@+id/bodyPartFragment"
-        android:name="com.marufalam.preschoollearning.fragments.bodyparts.bodyPartFragment"
+        android:name="com.marufalam.preschoollearning.fragments.bodyparts.BodyPartFragment"
         android:label="fragment_body_part"
         tools:layout="@layout/fragment_body_part" />
     <fragment
