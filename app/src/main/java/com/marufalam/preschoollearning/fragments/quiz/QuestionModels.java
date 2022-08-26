@@ -64,4 +64,17 @@ public class QuestionModels {
     public void setAns(String ans) {
         this.ans = ans;
     }
+
+    @Override
+    public String toString() {
+        return "QuestionModels{" +
+                "Question='" + Question + '\'' +
+                ", oA='" + oA + '\'' +
+                ", oB='" + oB + '\'' +
+                ", oC='" + oC + '\'' +
+                ", oD='" + oD + '\'' +
+                ", ans='" + ans + '\'' +
+                '}';
+    }
 }
+

@@ -1,5 +1,8 @@
 package com.marufalam.preschoollearning.fragments.quiz.findout;
 
+
+import static com.marufalam.preschoollearning.fragments.quiz.QuizFragment.listofQ;
+
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
@@ -21,6 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,6 +34,7 @@ import com.marufalam.preschoollearning.MainActivity;
 import com.marufalam.preschoollearning.R;
 import com.marufalam.preschoollearning.fragments.quiz.QuestionModels;
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -40,9 +45,7 @@ import java.util.List;
 import javax.security.auth.login.LoginException;
 
 
-public class AlphabetFindQFragment extends Fragment {
-    public static ArrayList<QuestionModels> listofQ;
-    DatabaseReference databaseReference;
+public class AlphabetFindQFragment extends Fragment implements View.OnClickListener {
     CountDownTimer countDownTimer;
     int timervalue = 120;
     RoundedHorizontalProgressBar progressBar;
@@ -50,10 +53,11 @@ public class AlphabetFindQFragment extends Fragment {
     QuestionModels modelClass;
     int index = 0;
     int correctCount = 0, wrongCount = 0;
-    TextView card_question, optiona, optionb, optionc, optiond, showTime, dexit;
+    TextView card_question, dexit, showTime;
+
     CardView cardOA, cardOB, cardOC, cardOD;
-    LinearLayout nextbtn;
-    ImageView dbackButton;
+    MaterialButton nextbtn;
+    ImageView optiona, dbackButton, optionb, optionc, optiond;
     long MillisecondTime, TimeBuff, UpdateTime = 0L;
     int Seconds, Minutes, MilliSeconds;
 
@@ -67,34 +71,14 @@ public class AlphabetFindQFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_alphabet_find_q, container, false);
-        listofQ = new ArrayList<>();
-        databaseReference = FirebaseDatabase.getInstance().getReference("Questions");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    QuestionModels modelClass = dataSnapshot.getValue(QuestionModels.class);
-                    listofQ.add(modelClass);
-                    Log.e("TAG", "onDataChange: HEllo"+listofQ);
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
-                Toast.makeText(getContext(), "Database Error", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
         Hooks(view);
 
         allQuestionList = listofQ;
         Collections.shuffle(allQuestionList);
         modelClass = listofQ.get(index);
         nextbtn.setClickable(false);
-
         countDownTimer = new CountDownTimer(120000, 1000) {
             @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
@@ -130,7 +114,7 @@ public class AlphabetFindQFragment extends Fragment {
                 dialog.getWindow().findViewById(R.id.tryagainbtn).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        /*Intent intent = new Intent(DashboardActivity.this, SplashActivity.class);
+                       /* Intent intent = new Intent(DashboardActivity.this, SplashActivity.class);
                         startActivity(intent);*/
                     }
                 });
@@ -141,21 +125,28 @@ public class AlphabetFindQFragment extends Fragment {
 
         return view;
     }
+
     private void Hooks(View view) {
 
         progressBar = view.findViewById(R.id.progress_bar);
         card_question = view.findViewById(R.id.card_question);
+
         optiona = view.findViewById(R.id.card_questiona);
         optionb = view.findViewById(R.id.card_questionb);
         optionc = view.findViewById(R.id.card_questionc);
         optiond = view.findViewById(R.id.card_questiond);
 
-        cardOA = view.findViewById(R.id.CardA);
-        cardOB = view.findViewById(R.id.CardB);
-        cardOC = view.findViewById(R.id.CardC);
-        cardOD = view.findViewById(R.id.CardD);
 
-        nextbtn = view.findViewById(R.id.nextBtn);
+        cardOA = view.findViewById(R.id.CardA);
+        cardOA.setOnClickListener(this);
+        cardOB = view.findViewById(R.id.CardB);
+        cardOB.setOnClickListener(this);
+        cardOC = view.findViewById(R.id.CardC);
+        cardOC.setOnClickListener(this);
+        cardOD = view.findViewById(R.id.CardD);
+        cardOD.setOnClickListener(this);
+
+        nextbtn = view.findViewById(R.id.next_btn);
         showTime = view.findViewById(R.id.showTime);
 
         //dexit = view.findViewById(R.id.dexit);
@@ -174,14 +165,17 @@ public class AlphabetFindQFragment extends Fragment {
         });*/
 
     }
+
     private void setAllData() {
         card_question.setText(modelClass.getQuestion());
-        optiona.setText(modelClass.getoA());
-        optionb.setText(modelClass.getoB());
-        optionc.setText(modelClass.getoC());
-        optiond.setText(modelClass.getoD());
+        Picasso.get().load(modelClass.getoA()).into(optiona);
+        Picasso.get().load(modelClass.getoB()).into(optionb);
+        Picasso.get().load(modelClass.getoC()).into(optionc);
+        Picasso.get().load(modelClass.getoD()).into(optiond);
+
 
     }
+
     public void Correct(CardView cardOption) {
         cardOption.setCardBackgroundColor(getResources().getColor(R.color.green));
 
@@ -222,8 +216,8 @@ public class AlphabetFindQFragment extends Fragment {
     }
 
     private void GameWon() {
-        Toast.makeText(getActivity(), "Game is On", Toast.LENGTH_SHORT).show();
-        /*Intent intent = new Intent(AlphabetFindQFragment.this, MainActivity.class);
+       /* Toast.makeText(getActivity(), "Game is On", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(AlphabetFindQFragment.this, MainActivity.class);
         intent.putExtra("correct", correctCount);
         intent.putExtra("wrong", wrongCount);
         startActivity(intent);*/
@@ -250,7 +244,9 @@ public class AlphabetFindQFragment extends Fragment {
         cardOD.setCardBackgroundColor(getResources().getColor(R.color.white));
     }
 
-    public void Option_Click(View view) {
+
+    @Override
+    public void onClick(View view) {
         switch (view.getId()) {
             case R.id.CardA:
                 disableButton();
@@ -319,6 +315,6 @@ public class AlphabetFindQFragment extends Fragment {
             default:
                 break;
         }
-
     }
 }
+
