@@ -4,45 +4,37 @@ package com.marufalam.preschoollearning.fragments.quiz.findout;
 import static com.marufalam.preschoollearning.fragments.quiz.QuizFragment.listofQ;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.marufalam.preschoollearning.MainActivity;
 import com.marufalam.preschoollearning.R;
+import com.marufalam.preschoollearning.SuccessFullFragment;
 import com.marufalam.preschoollearning.fragments.quiz.QuestionModels;
+import com.marufalam.preschoollearning.fragments.quiz.QuizFragment;
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 import com.squareup.picasso.Picasso;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import javax.security.auth.login.LoginException;
+import java.util.Objects;
 
 
 public class AlphabetFindQFragment extends Fragment implements View.OnClickListener {
@@ -53,11 +45,11 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
     QuestionModels modelClass;
     int index = 0;
     int correctCount = 0, wrongCount = 0;
-    TextView card_question, dexit, showTime;
+    TextView card_question,  showTime;
 
     CardView cardOA, cardOB, cardOC, cardOD;
     MaterialButton nextbtn;
-    ImageView optiona, dbackButton, optionb, optionc, optiond;
+    ImageView homebtn, dbackButton,optiona, optionb, optionc, optiond;
     long MillisecondTime, TimeBuff, UpdateTime = 0L;
     int Seconds, Minutes, MilliSeconds;
 
@@ -114,8 +106,8 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
                 dialog.getWindow().findViewById(R.id.tryagainbtn).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                       /* Intent intent = new Intent(DashboardActivity.this, SplashActivity.class);
-                        startActivity(intent);*/
+                        Intent intent = new Intent(requireActivity(), QuizFragment.class);
+                        startActivity(intent);
                     }
                 });
                 dialog.show();
@@ -148,23 +140,27 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
 
         nextbtn = view.findViewById(R.id.next_btn);
         showTime = view.findViewById(R.id.showTime);
+        dbackButton = view.findViewById(R.id.dback);
 
         //dexit = view.findViewById(R.id.dexit);
-        //dbackButton = view.findViewById(R.id.dback);
-       /* dexit.setOnClickListener(new View.OnClickListener() {
+        homebtn = view.findViewById(R.id.home);
+        homebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //back button
+                startActivity(new Intent(requireActivity(),MainActivity.class));
             }
         });
         dbackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //startActivity(new Intent(DashboardActivity.this,SplashActivity.class));
+                Navigation.findNavController(requireView()).navigate(R.id.action_alphabetFindQFragment_to_findOutFragment);
+
             }
-        });*/
+        });
+
 
     }
+
 
     private void setAllData() {
         card_question.setText(modelClass.getQuestion());
@@ -216,11 +212,15 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
     }
 
     private void GameWon() {
-       /* Toast.makeText(getActivity(), "Game is On", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(AlphabetFindQFragment.this, MainActivity.class);
-        intent.putExtra("correct", correctCount);
-        intent.putExtra("wrong", wrongCount);
-        startActivity(intent);*/
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("correct", correctCount);
+        bundle.putInt("wrong", wrongCount);
+        Navigation.findNavController(requireView()).navigate(R.id.action_alphabetFindQFragment_to_successFullFragment,bundle);
+        /*NavController navController = Navigation.findNavController(Activity.this, R.id.nav_host_fragment);
+        navController.navigateUp();
+        navController.navigate(R.id.FragmentYouWantShown);*/
+
     }
 
     public void enableButton() {
@@ -251,7 +251,7 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
             case R.id.CardA:
                 disableButton();
                 nextbtn.setClickable(true);
-                Toast.makeText(getActivity(), "Clicked A", Toast.LENGTH_SHORT).show();
+
                 if (modelClass.getoA().equals(modelClass.getAns())) {
                     cardOA.setCardBackgroundColor(getResources().getColor(R.color.green));
                     if (index < listofQ.size() - 1) {
@@ -267,7 +267,7 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
             case R.id.CardB:
                 disableButton();
                 nextbtn.setClickable(true);
-                Toast.makeText(getActivity(), "Clicked B", Toast.LENGTH_SHORT).show();
+
                 if (modelClass.getoB().equals(modelClass.getAns())) {
                     cardOB.setCardBackgroundColor(getResources().getColor(R.color.green));
                     if (index < listofQ.size() - 1) {
@@ -283,7 +283,7 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
             case R.id.CardC:
                 disableButton();
                 nextbtn.setClickable(true);
-                Toast.makeText(getActivity(), "Clicked C", Toast.LENGTH_SHORT).show();
+
                 if (modelClass.getoC().equals(modelClass.getAns())) {
                     cardOC.setCardBackgroundColor(getResources().getColor(R.color.green));
                     if (index < listofQ.size() - 1) {
@@ -299,7 +299,7 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
             case R.id.CardD:
                 disableButton();
                 nextbtn.setClickable(true);
-                Toast.makeText(getActivity(), "Clicked D", Toast.LENGTH_SHORT).show();
+
                 if (modelClass.getoD().equals(modelClass.getAns())) {
                     cardOD.setCardBackgroundColor(getResources().getColor(R.color.green));
                     if (index < listofQ.size() - 1) {

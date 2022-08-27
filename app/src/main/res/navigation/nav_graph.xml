@@ -98,5 +98,24 @@
         android:id="@+id/alphabetFindQFragment"
         android:name="com.marufalam.preschoollearning.fragments.quiz.findout.AlphabetFindQFragment"
         android:label="fragment_alphabet_find_q"
-        tools:layout="@layout/fragment_alphabet_find_q" />
+        tools:layout="@layout/fragment_alphabet_find_q" >
+        <action
+            android:id="@+id/action_alphabetFindQFragment_to_successFullFragment"
+            app:destination="@id/successFullFragment"
+            app:popUpTo="@id/alphabetFindQFragment" />
+        <action
+            android:id="@+id/action_alphabetFindQFragment_to_findOutFragment"
+            app:destination="@id/findOutFragment"
+            app:popUpTo="@id/alphabetFindQFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/successFullFragment"
+        android:name="com.marufalam.preschoollearning.SuccessFullFragment"
+        android:label="fragment_success_full"
+        tools:layout="@layout/fragment_success_full" >
+        <action
+            android:id="@+id/action_successFullFragment_to_alphabetFindQFragment"
+            app:destination="@id/alphabetFindQFragment" />
+    </fragment>
 </navigation>
