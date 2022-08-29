@@ -50,23 +50,10 @@ public class BodyPartFragment extends Fragment {
 
 
 
-        viewpager = view.findViewById(R.id.viewpager);
-        setupViewPager(viewpager);
+
         return view;
     }
 
-    private void setupViewPager(ViewPager viewPager) {
-        BodyPartsViewPagerAdapter adapter = new BodyPartsViewPagerAdapter(getChildFragmentManager());
-
-
-        for(CategoryModels so:bodyPModelList){
-            adapter.addFragment(new BodyPartsPagerFragment(so));
-        }
-
-
-        viewPager.setAdapter(adapter);
-        viewPager.setOffscreenPageLimit(1);
-    }
 
 
 

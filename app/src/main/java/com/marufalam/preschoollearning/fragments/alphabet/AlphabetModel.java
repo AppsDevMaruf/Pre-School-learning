@@ -1,61 +1,71 @@
 package com.marufalam.preschoollearning.fragments.alphabet;
 
-public class AlphabetModel {
-    int capitalImg;
-    int objectImg;
-    int objectDetail;
-    int alphaSound;
-    int objectSound;
+import com.marufalam.preschoollearning.R;
+import com.marufalam.preschoollearning.fragments.week.WeekModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
+public class AlphabetModel {
+    int alphL,alphW,alphObject,alphSponudL,AlphSponudW;
 
     public AlphabetModel() {
     }
 
-    public AlphabetModel(int capitalImg, int objectImg, int objectDetail, int alphaSound, int objectSound) {
-        this.capitalImg = capitalImg;
-        this.objectImg = objectImg;
-        this.objectDetail = objectDetail;
-        this.alphaSound = alphaSound;
-        this.objectSound = objectSound;
+    public AlphabetModel(int alphL, int alphW, int alphObject, int alphSponudL, int alphSponudW) {
+        this.alphL = alphL;
+        this.alphW = alphW;
+        this.alphObject = alphObject;
+        this.alphSponudL = alphSponudL;
+        AlphSponudW = alphSponudW;
     }
 
-    public int getCapitalImg() {
-        return capitalImg;
+    public int getAlphL() {
+        return alphL;
     }
 
-    public void setCapitalImg(int capitalImg) {
-        this.capitalImg = capitalImg;
+    public void setAlphL(int alphL) {
+        this.alphL = alphL;
     }
 
-    public int getObjectImg() {
-        return objectImg;
+    public int getAlphW() {
+        return alphW;
     }
 
-    public void setObjectImg(int objectImg) {
-        this.objectImg = objectImg;
+    public void setAlphW(int alphW) {
+        this.alphW = alphW;
     }
 
-    public int getObjectDetail() {
-        return objectDetail;
+    public int getAlphObject() {
+        return alphObject;
     }
 
-    public void setObjectDetail(int objectDetail) {
-        this.objectDetail = objectDetail;
+    public void setAlphObject(int alphObject) {
+        this.alphObject = alphObject;
     }
 
-    public int getAlphaSound() {
-        return alphaSound;
+    public int getAlphSponudL() {
+        return alphSponudL;
     }
 
-    public void setAlphaSound(int alphaSound) {
-        this.alphaSound = alphaSound;
+    public void setAlphSponudL(int alphSponudL) {
+        this.alphSponudL = alphSponudL;
     }
 
-    public int getObjectSound() {
-        return objectSound;
+    public int getAlphSponudW() {
+        return AlphSponudW;
     }
 
-    public void setObjectSound(int objectSound) {
-        this.objectSound = objectSound;
+    public void setAlphSponudW(int alphSponudW) {
+        AlphSponudW = alphSponudW;
+    }
+    public static List<AlphabetModel> getAlphabetItems(){
+        final ArrayList<AlphabetModel> items = new ArrayList<>();
+        items.add(new AlphabetModel(R.drawable.a,R.drawable.apple_t,R.drawable.apple,R.raw.a,R.raw.a_is_for_apple));
+        items.add(new AlphabetModel(R.drawable.a,R.drawable.apple_t,R.drawable.apple,R.raw.a,R.raw.a_is_for_apple));
+        items.add(new AlphabetModel(R.drawable.a,R.drawable.apple_t,R.drawable.apple,R.raw.a,R.raw.a_is_for_apple));
+        items.add(new AlphabetModel(R.drawable.a,R.drawable.apple_t,R.drawable.apple,R.raw.a,R.raw.a_is_for_apple));
+
+        return items;
     }
 }

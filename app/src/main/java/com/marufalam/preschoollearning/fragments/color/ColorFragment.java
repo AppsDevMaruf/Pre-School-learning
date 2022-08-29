@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import com.marufalam.preschoollearning.R;
 import com.marufalam.preschoollearning.fragments.CategoryModels;
-import com.marufalam.preschoollearning.fragments.bodyparts.BodyPartsViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,20 +45,8 @@ public class ColorFragment extends Fragment {
         categoryModelsList.add(new CategoryModels(R.drawable.yellow_t,  R.drawable.yellow,R.raw.yellow));
 
 
-        viewpager = view.findViewById(R.id.viewpager);
-        setupViewPager(viewpager);
+
         return view;
     }
-    private void setupViewPager(ViewPager viewPager) {
-        BodyPartsViewPagerAdapter adapter = new BodyPartsViewPagerAdapter(getChildFragmentManager());
 
-
-        for(CategoryModels so: categoryModelsList){
-            adapter.addFragment(new ColorPagerFragment(so));
-        }
-
-
-        viewPager.setAdapter(adapter);
-        viewPager.setOffscreenPageLimit(1);
-    }
 }

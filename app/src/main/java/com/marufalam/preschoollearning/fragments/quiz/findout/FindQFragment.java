@@ -1,43 +1,34 @@
 package com.marufalam.preschoollearning.fragments.quiz.findout;
 
-
-import static com.marufalam.preschoollearning.fragments.quiz.QuizFragment.listofQ;
+import static com.marufalam.preschoollearning.MainActivity.listofQ;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.marufalam.preschoollearning.MainActivity;
 import com.marufalam.preschoollearning.R;
-import com.marufalam.preschoollearning.SuccessFullFragment;
 import com.marufalam.preschoollearning.fragments.quiz.QuestionModels;
-import com.marufalam.preschoollearning.fragments.quiz.QuizFragment;
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 import com.squareup.picasso.Picasso;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 
-public class AlphabetFindQFragment extends Fragment implements View.OnClickListener {
+public class FindQFragment extends Fragment implements View.OnClickListener {
     CountDownTimer countDownTimer;
     int timervalue = 120;
     RoundedHorizontalProgressBar progressBar;
@@ -54,7 +45,7 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
     int Seconds, Minutes, MilliSeconds;
 
 
-    public AlphabetFindQFragment() {
+    public FindQFragment() {
         // Required empty public constructor
     }
 
@@ -64,7 +55,7 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment_alphabet_find_q, container, false);
+        View view = inflater.inflate(R.layout.fragment_find_q, container, false);
         Hooks(view);
 
         allQuestionList = listofQ;
@@ -96,7 +87,7 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
 
             @Override
             public void onFinish() {
-                Dialog dialog = new Dialog(getActivity(), R.style.Dialog);
+           /*     Dialog dialog = new Dialog(getActivity(), R.style.Dialog);
                 dialog.setContentView(R.layout.time_out_dialog);
                 WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
                 lp.dimAmount = 0.0F;
@@ -110,7 +101,7 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
                         startActivity(intent);
                     }
                 });
-                dialog.show();
+                dialog.show();*/
             }
         }.start();
         setAllData();
@@ -153,7 +144,7 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
         dbackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Navigation.findNavController(requireView()).navigate(R.id.action_alphabetFindQFragment_to_findOutFragment);
+                Navigation.findNavController(requireView()).navigate(R.id.action_alphabetFindQFragment_to_quizFragment);
 
             }
         });
@@ -164,10 +155,10 @@ public class AlphabetFindQFragment extends Fragment implements View.OnClickListe
 
     private void setAllData() {
         card_question.setText(modelClass.getQuestion());
-        Picasso.get().load(modelClass.getoA()).into(optiona);
-        Picasso.get().load(modelClass.getoB()).into(optionb);
-        Picasso.get().load(modelClass.getoC()).into(optionc);
-        Picasso.get().load(modelClass.getoD()).into(optiond);
+        Picasso.get().load(modelClass.getoA()).placeholder(R.drawable.loader).into(optiona);
+        Picasso.get().load(modelClass.getoB()).placeholder(R.drawable.loader).into(optionb);
+        Picasso.get().load(modelClass.getoC()).placeholder(R.drawable.loader).into(optionc);
+        Picasso.get().load(modelClass.getoD()).placeholder(R.drawable.loader).into(optiond);
 
 
     }

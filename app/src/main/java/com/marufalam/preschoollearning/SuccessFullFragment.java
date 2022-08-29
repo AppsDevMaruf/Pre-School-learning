@@ -1,6 +1,7 @@
 package com.marufalam.preschoollearning;
 
-import static com.marufalam.preschoollearning.fragments.quiz.QuizFragment.listofQ;
+
+import static com.marufalam.preschoollearning.MainActivity.listofQ;
 
 import android.content.Intent;
 import android.os.Bundle;

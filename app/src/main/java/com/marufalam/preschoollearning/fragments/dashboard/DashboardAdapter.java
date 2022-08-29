@@ -43,7 +43,7 @@ public class DashboardAdapter  extends RecyclerView.Adapter<DashboardAdapter.Das
                      Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_numberFragment);
                      break;
                  case 2:
-                     Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_weeksFragment);
+                     Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_weekFragment);
                      break;
                  case 3:
                      Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_bodyPartFragment);
