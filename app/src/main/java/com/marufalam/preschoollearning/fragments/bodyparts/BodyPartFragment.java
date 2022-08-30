@@ -3,14 +3,20 @@ package com.marufalam.preschoollearning.fragments.bodyparts;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.marufalam.preschoollearning.R;
 import com.marufalam.preschoollearning.fragments.CategoryModels;
+import com.marufalam.preschoollearning.fragments.color.ColorAdapter;
+import com.marufalam.preschoollearning.fragments.color.ColorModel;
 
 
 import java.util.ArrayList;
@@ -18,8 +24,6 @@ import java.util.List;
 
 
 public class BodyPartFragment extends Fragment {
-    List<CategoryModels> bodyPModelList;
-    ViewPager viewpager;
 
     public BodyPartFragment() {
         // Required empty public constructor
@@ -33,19 +37,16 @@ public class BodyPartFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_body_part, container, false);
 
-        bodyPModelList = new ArrayList<>();
-        bodyPModelList.add(new CategoryModels(R.drawable.arm_t,  R.drawable.arm,R.raw.arm));
-        bodyPModelList.add(new CategoryModels(R.drawable.ears_t,  R.drawable.ears,R.raw.ears));
-        bodyPModelList.add(new CategoryModels(R.drawable.eyes_t,  R.drawable.eyes,R.raw.eyes));
-        bodyPModelList.add(new CategoryModels(R.drawable.forehead_t,  R.drawable.forehead_t,R.raw.forehad));
-        bodyPModelList.add(new CategoryModels(R.drawable.hand_t,  R.drawable.hand_t,R.raw.hand));
-        bodyPModelList.add(new CategoryModels(R.drawable.head_t,  R.drawable.head,R.raw.head));
-        bodyPModelList.add(new CategoryModels(R.drawable.leg_t,  R.drawable.leg,R.raw.leg));
-        bodyPModelList.add(new CategoryModels(R.drawable.mouth_t,  R.drawable.mouth,R.raw.mouth));
-        bodyPModelList.add(new CategoryModels(R.drawable.neck_t,  R.drawable.neck,R.raw.neck));
-        bodyPModelList.add(new CategoryModels(R.drawable.nose_t,  R.drawable.nose,R.raw.nose));
-        bodyPModelList.add(new CategoryModels(R.drawable.shoulder_t,  R.drawable.shoulder,R.raw.shoulder));
-        bodyPModelList.add(new CategoryModels(R.drawable.teeth_t,  R.drawable.teeth,R.raw.teeth));
+        ImageView backbtn = view.findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(view1 -> {
+            Navigation.findNavController(view).navigate(R.id.action_bodyPartFragment_to_dashBoardFragment);
+        });
+
+        final BodypartsAdapter adapter = new BodypartsAdapter(BodyPartsModel.getBodyParts());
+        final LinearLayoutManager llm = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+        RecyclerView recyclerView = view.findViewById(R.id.bodyRV);
+        recyclerView.setLayoutManager(llm);
+        recyclerView.setAdapter(adapter);
 
 
 

@@ -24,15 +24,20 @@ import com.marufalam.preschoollearning.fragments.quiz.QuestionModels;
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 
 public class FindQFragment extends Fragment implements View.OnClickListener {
     CountDownTimer countDownTimer;
     int timervalue = 120;
     RoundedHorizontalProgressBar progressBar;
-    List<QuestionModels> allQuestionList;
+
     QuestionModels modelClass;
     int index = 0;
     int correctCount = 0, wrongCount = 0;
@@ -58,9 +63,20 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_find_q, container, false);
         Hooks(view);
 
-        allQuestionList = listofQ;
-        Collections.shuffle(allQuestionList);
+        //allQuestionList = listofQ;
+        Collections.shuffle(listofQ,new Random(listofQ.size()));
         modelClass = listofQ.get(index);
+
+       /* Set s = new HashSet(listofQ.size());
+        s.addAll(listofQ);
+        *//*List shuffledList = new ArrayList(s.size());
+        shuffledList.addAll(s);*//*
+// Since items come out of a set in an undefined order, using shuffledList
+// in this state may suit your needs. otherwise go ahead and shuffle it too
+        Collections.shuffle(Arrays.asList(s.toArray()));
+        modelClass = listofQ.get(index);*/
+
+
         nextbtn.setClickable(false);
         countDownTimer = new CountDownTimer(120000, 1000) {
             @SuppressLint({"SetTextI18n", "DefaultLocale"})

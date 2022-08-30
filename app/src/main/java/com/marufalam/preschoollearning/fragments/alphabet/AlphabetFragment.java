@@ -31,7 +31,7 @@ public class AlphabetFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_alphabet, container, false);
         ImageView backbtn = view.findViewById(R.id.backbtn);
         backbtn.setOnClickListener(view1 -> {
-            Navigation.findNavController(view).navigate(R.id.action_weekFragment_to_dashBoardFragment);
+            Navigation.findNavController(view).navigate(R.id.action_alphabetFragment_to_dashBoardFragment);
         });
 
         final AlphabetAdapter adapter = new AlphabetAdapter(AlphabetModel.getAlphabetItems());

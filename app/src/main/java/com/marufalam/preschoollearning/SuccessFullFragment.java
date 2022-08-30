@@ -49,8 +49,12 @@ public class SuccessFullFragment extends Fragment {
         backButton = view.findViewById(R.id.ic_back);
 
 
+        assert getArguments() != null;
         woncorrect = getArguments().getInt("correct");
         wonwrong = getArguments().getInt("wrong");
+
+        progressBar.setProgressMax(listofQ.size());
+
 
         progressBar.setProgress(woncorrect);
         resultText.setText(woncorrect+"/"+listofQ.size());
