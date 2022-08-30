@@ -3,6 +3,7 @@ package com.marufalam.preschoollearning.fragments.quiz.findout;
 import static com.marufalam.preschoollearning.MainActivity.listofQ;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -14,6 +15,7 @@ import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +23,7 @@ import com.google.android.material.button.MaterialButton;
 import com.marufalam.preschoollearning.MainActivity;
 import com.marufalam.preschoollearning.R;
 import com.marufalam.preschoollearning.fragments.quiz.QuestionModels;
+import com.marufalam.preschoollearning.fragments.quiz.QuizFragment;
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 import com.squareup.picasso.Picasso;
 
@@ -35,8 +38,10 @@ import java.util.Set;
 
 public class FindQFragment extends Fragment implements View.OnClickListener {
     CountDownTimer countDownTimer;
-    int timervalue = 120;
+    int timervalue = 60;
     RoundedHorizontalProgressBar progressBar;
+
+    public static ArrayList<QuestionModels> temp = new ArrayList<>();
 
     QuestionModels modelClass;
     int index = 0;
@@ -64,8 +69,18 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
         Hooks(view);
 
         //allQuestionList = listofQ;
-        Collections.shuffle(listofQ,new Random(listofQ.size()));
-        modelClass = listofQ.get(index);
+        Collections.shuffle(listofQ);
+        System.out.println("bal......................................"+listofQ.size());
+        temp.clear();
+        for(int i=0; i<5; i++){
+            temp.add(listofQ.get(i));
+        }
+        //listofQ = temp;
+        //a = (int[])resizeArray(a, 5);
+        //listofQ = (QuestionModels[])resizeArray(listofQ, 5);
+        //listofQ = Arrays.copyOf(listofQ, listofQlength + 1);
+        System.out.println("bal2......................................"+temp.size());
+        modelClass = temp.get(index);
 
        /* Set s = new HashSet(listofQ.size());
         s.addAll(listofQ);
@@ -78,7 +93,7 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
 
 
         nextbtn.setClickable(false);
-        countDownTimer = new CountDownTimer(120000, 1000) {
+        countDownTimer = new CountDownTimer(60000, 1000) {
             @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
             public void onTick(long millisUntilFinished) {
@@ -103,7 +118,7 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onFinish() {
-           /*     Dialog dialog = new Dialog(getActivity(), R.style.Dialog);
+                /*Dialog dialog = new Dialog(getActivity(), R.style.Dialog);
                 dialog.setContentView(R.layout.time_out_dialog);
                 WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
                 lp.dimAmount = 0.0F;
@@ -113,8 +128,8 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
                 dialog.getWindow().findViewById(R.id.tryagainbtn).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(requireActivity(), QuizFragment.class);
-                        startActivity(intent);
+                        Navigation.findNavController(view).navigate(R.id.action_alphabetFindQFragment_to_quizFragment);
+
                     }
                 });
                 dialog.show();*/
@@ -187,7 +202,7 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
             public void onClick(View v) {
                 correctCount++;
                 index++;
-                modelClass = listofQ.get(index);
+                modelClass = temp.get(index);
                 setAllData();
                 resetColor();
                 enableButton();
@@ -204,9 +219,9 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View v) {
                 wrongCount++;
-                if (index < listofQ.size() - 1) {
+                if (index < temp.size() - 1) {
                     index++;
-                    modelClass = listofQ.get(index);
+                    modelClass = temp.get(index);
                     setAllData();
                     resetColor();
                     enableButton();
@@ -261,7 +276,7 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
 
                 if (modelClass.getoA().equals(modelClass.getAns())) {
                     cardOA.setCardBackgroundColor(getResources().getColor(R.color.green));
-                    if (index < listofQ.size() - 1) {
+                    if (index < temp.size() - 1) {
                         Correct(cardOA);
                     } else {
                         GameWon();
@@ -277,7 +292,7 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
 
                 if (modelClass.getoB().equals(modelClass.getAns())) {
                     cardOB.setCardBackgroundColor(getResources().getColor(R.color.green));
-                    if (index < listofQ.size() - 1) {
+                    if (index < temp.size() - 1) {
                         Correct(cardOB);
                     } else {
                         GameWon();
@@ -293,7 +308,7 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
 
                 if (modelClass.getoC().equals(modelClass.getAns())) {
                     cardOC.setCardBackgroundColor(getResources().getColor(R.color.green));
-                    if (index < listofQ.size() - 1) {
+                    if (index < temp.size() - 1) {
                         Correct(cardOC);
                     } else {
                         GameWon();
@@ -309,7 +324,7 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
 
                 if (modelClass.getoD().equals(modelClass.getAns())) {
                     cardOD.setCardBackgroundColor(getResources().getColor(R.color.green));
-                    if (index < listofQ.size() - 1) {
+                    if (index < temp.size() - 1) {
                         Correct(cardOD);
                     } else {
                         GameWon();

@@ -2,6 +2,7 @@ package com.marufalam.preschoollearning;
 
 
 import static com.marufalam.preschoollearning.MainActivity.listofQ;
+import static com.marufalam.preschoollearning.fragments.quiz.findout.FindQFragment.temp;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -53,11 +54,19 @@ public class SuccessFullFragment extends Fragment {
         woncorrect = getArguments().getInt("correct");
         wonwrong = getArguments().getInt("wrong");
 
-        progressBar.setProgressMax(listofQ.size());
+        progressBar.setProgressMax(temp.size());
 
 
-        progressBar.setProgress(woncorrect);
-        resultText.setText(woncorrect+"/"+listofQ.size());
+
+        if (woncorrect==0){
+            resultText.setText(woncorrect+"/"+ temp.size());
+            progressBar.setProgress(woncorrect);
+        }else {
+            woncorrect++;
+            resultText.setText(woncorrect+"/"+temp.size());
+            progressBar.setProgress(woncorrect);
+        }
+
 
 
         sharebtn.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +77,7 @@ public class SuccessFullFragment extends Fragment {
                     shareIntent.setType("text/plain");
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
                     int won = woncorrect;
-                    String shareMessage= "\nI Got "+won+" Out of " +listofQ.size()+" You Can Also try \n\n";
+                    String shareMessage= "\nI Got "+won+" Out of " +temp.size()+" You Can Also try \n\n";
                     shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                     startActivity(Intent.createChooser(shareIntent, "choose one"));

@@ -91,7 +91,9 @@
             app:popUpTo="@id/alphabetFindQFragment" />
         <action
             android:id="@+id/action_alphabetFindQFragment_to_quizFragment"
-            app:destination="@id/quizFragment" />
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/alphabetFindQFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/successFullFragment"
