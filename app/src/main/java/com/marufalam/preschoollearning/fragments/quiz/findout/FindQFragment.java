@@ -185,6 +185,7 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
 
 
     private void setAllData() {
+        nextbtn.setClickable(false);
         card_question.setText(modelClass.getQuestion());
         Picasso.get().load(modelClass.getoA()).placeholder(R.drawable.loader).into(optiona);
         Picasso.get().load(modelClass.getoB()).placeholder(R.drawable.loader).into(optionb);
@@ -269,6 +270,7 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        //nextbtn.setClickable(false);
         switch (view.getId()) {
             case R.id.CardA:
                 disableButton();
