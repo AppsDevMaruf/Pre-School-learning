@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PreSchool Learning</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="apple">Apple</string>
+    <string name="boy">Boy</string>
+    <string name="cat">Cat</string>
+    <string name="duck">Duck</string>
+    <string name="egg">Egg</string>
+
+
+</resources>

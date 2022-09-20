@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashBoardFragment">
+
+    <fragment
+        android:id="@+id/dashBoardFragment"
+        android:name="com.marufalam.preschoollearning.fragments.dashboard.DashBoardFragment"
+        android:label="fragment_dash_board"
+        tools:layout="@layout/fragment_dash_board" >
+        <action
+            android:id="@+id/action_dashBoardFragment_to_colorFragment"
+            app:destination="@id/colorFragment"
+            app:popUpTo="@id/dashBoardFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_bodyPartFragment"
+            app:destination="@id/bodyPartFragment"
+            app:popUpTo="@id/dashBoardFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/dashBoardFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_numberFragment"
+            app:destination="@id/numberFragment"
+            app:popUpTo="@id/dashBoardFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_weekFragment"
+            app:destination="@id/weekFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_alphabetFragment"
+            app:destination="@id/alphabetFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_drawingFragment"
+            app:destination="@id/drawingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/colorFragment"
+        android:name="com.marufalam.preschoollearning.fragments.color.ColorFragment"
+        android:label="fragment_color"
+        tools:layout="@layout/fragment_color" >
+        <action
+            android:id="@+id/action_colorFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bodyPartFragment"
+        android:name="com.marufalam.preschoollearning.fragments.bodyparts.BodyPartFragment"
+        android:label="fragment_body_part"
+        tools:layout="@layout/fragment_body_part" >
+        <action
+            android:id="@+id/action_bodyPartFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.marufalam.preschoollearning.fragments.quiz.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_wordMatchingFragment"
+            app:destination="@id/wordMatchingFragment"
+            app:popUpTo="@id/quizFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_alphabetFindQFragment"
+            app:destination="@id/alphabetFindQFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/numberFragment"
+        android:name="com.marufalam.preschoollearning.fragments.number.NumberFragment"
+        android:label="fragment_number"
+        tools:layout="@layout/fragment_number" >
+        <action
+            android:id="@+id/action_numberFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment"
+            app:popUpTo="@id/numberFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordMatchingFragment"
+        android:name="com.marufalam.preschoollearning.fragments.quiz.wordmatch.WordMatchingFragment"
+        android:label="fragment_word_matching"
+        tools:layout="@layout/fragment_word_matching" />
+    <fragment
+        android:id="@+id/alphabetFindQFragment"
+        android:name="com.marufalam.preschoollearning.fragments.quiz.findout.FindQFragment"
+        android:label="fragment_find_q"
+        tools:layout="@layout/fragment_find_q" >
+        <action
+            android:id="@+id/action_alphabetFindQFragment_to_successFullFragment"
+            app:destination="@id/successFullFragment"
+            app:popUpTo="@id/alphabetFindQFragment" />
+        <action
+            android:id="@+id/action_alphabetFindQFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/alphabetFindQFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/successFullFragment"
+        android:name="com.marufalam.preschoollearning.SuccessFullFragment"
+        android:label="fragment_success_full"
+        tools:layout="@layout/fragment_success_full" >
+        <action
+            android:id="@+id/action_successFullFragment_to_alphabetFindQFragment"
+            app:destination="@id/alphabetFindQFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weekFragment"
+        android:name="com.marufalam.preschoollearning.fragments.week.WeekFragment"
+        android:label="fragment_week"
+        tools:layout="@layout/fragment_week" >
+        <action
+            android:id="@+id/action_weekFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alphabetFragment"
+        android:name="com.marufalam.preschoollearning.fragments.alphabet.AlphabetFragment"
+        android:label="fragment_alphabet"
+        tools:layout="@layout/fragment_alphabet" >
+        <action
+            android:id="@+id/action_alphabetFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/drawingFragment"
+        android:name="com.marufalam.preschoollearning.fragments.drawing.DrawingFragment"
+        android:label="fragment_drawing"
+        tools:layout="@layout/fragment_drawing" >
+        <action
+            android:id="@+id/action_drawingFragment_to_dashBoardFragment"
+            app:destination="@id/dashBoardFragment" />
+    </fragment>
+</navigation>

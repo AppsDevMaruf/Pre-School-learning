@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/congratulations">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@color/green">
+
+        <ImageView
+            android:id="@+id/ic_back"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:background="@drawable/arrow_back"
+            android:backgroundTint="@color/white"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/ic_exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:text="Exit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/circleLayout"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_180sdp"
+        android:layout_centerHorizontal="true">
+
+        <com.mikhaellopez.circularprogressbar.CircularProgressBar
+            android:id="@+id/circularProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cpb_background_progressbar_color="@color/red"
+            app:cpb_background_progressbar_width="@dimen/_10sdp"
+            app:cpb_progress="1"
+            app:cpb_progress_direction="to_right"
+            app:cpb_progress_max="10"
+            app:cpb_progressbar_color="@color/green"
+            app:cpb_progressbar_width="@dimen/_10sdp"
+            app:cpb_round_border="false" />
+
+        <TextView
+            android:id="@+id/resultText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/green"
+            android:text="15/20"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_22sdp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/shareLayout"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/circleLayout"
+        android:layout_marginTop="@dimen/_10sdp">
+        <LinearLayout
+            android:id="@+id/sharebtn"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_40sdp"
+            android:background="@drawable/share_shape"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:text="Share Your Score"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

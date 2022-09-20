@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+
+    >
+
+
+    <ImageView
+        android:id="@+id/objectName"
+        android:layout_width="485dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center"
+        android:src="@drawable/apple_t" />
+
+    <LinearLayout
+
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/alphabet"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingStart="@dimen/_60sdp"
+            android:paddingEnd="@dimen/_60sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/a" />
+
+    <ImageView
+        android:id="@+id/objectImg"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_120sdp"
+        android:src="@drawable/apple"/>
+
+</LinearLayout>
+</LinearLayout>

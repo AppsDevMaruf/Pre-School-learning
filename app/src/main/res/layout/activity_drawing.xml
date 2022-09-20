@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DrawingActivity">
+
+    <com.kyanogen.signatureview.SignatureView
+        xmlns:sign="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/signature_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        sign:penSize="5dp"
+        sign:backgroundColor="#ffffff"
+        sign:penColor="#000000"
+        sign:enableSignature="true"
+        android:layout_above="@+id/optionsHolder"
+        />
+    <LinearLayout
+        android:id="@+id/optionsHolder"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/_4sdp"
+            >
+            <SeekBar
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:id="@+id/penSize"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+            </SeekBar>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtPenSize"
+                android:textColor="@color/black"
+                android:text="5dp">
+
+            </TextView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/_4sdp"
+            android:gravity="end"
+            >
+           <ImageButton
+               android:layout_width="0dp"
+               android:layout_height="@dimen/_70sdp"
+               android:id="@+id/btnEraser"
+               android:background="@color/white"
+               android:scaleType="center"
+               android:layout_weight="1"
+               android:src="@drawable/ic_eraser"
+               >
+
+           </ImageButton>
+           <ImageButton
+               android:layout_width="0dp"
+               android:layout_height="@dimen/_70sdp"
+               android:id="@+id/btnColor"
+               android:background="@color/white"
+               android:scaleType="center"
+               android:layout_weight="1"
+               android:src="@drawable/ic_color"
+               >
+
+           </ImageButton>
+           <ImageButton
+               android:layout_width="0dp"
+               android:layout_height="@dimen/_70sdp"
+               android:id="@+id/btnSave"
+               android:background="@color/white"
+               android:scaleType="center"
+               android:layout_weight="1"
+               android:src="@drawable/ic_save"
+               >
+
+           </ImageButton>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
