@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="@dimen/_250sdp"
-    android:layout_height="@dimen/_250sdp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center"
-    app:cardBackgroundColor="#ff9999"
+    app:cardBackgroundColor="@color/green"
     app:cardCornerRadius="@dimen/_10sdp">
 
     <LinearLayout

@@ -50,7 +50,8 @@ public class DrawingFragment extends Fragment {
 
     private static String fileName;
 
-    File path = new File(getExternalStorageDirectory().getAbsolutePath() + "/myPaintings");
+    File path = Environment.getExternalStoragePublicDirectory(
+            Environment.DIRECTORY_PICTURES);
 
     @Nullable
     @Override
@@ -148,7 +149,7 @@ public class DrawingFragment extends Fragment {
         fos.write(bitmapData);
         fos.flush();
         fos.close();
-        Toast.makeText(requireActivity(), "Drawing Saved!!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireActivity(), "Drawing Saved!!"+fileName, Toast.LENGTH_SHORT).show();
 
     }
 

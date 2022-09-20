@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.os.CountDownTimer;
@@ -17,24 +18,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 import com.marufalam.preschoollearning.MainActivity;
 import com.marufalam.preschoollearning.R;
 import com.marufalam.preschoollearning.fragments.quiz.QuestionModels;
-import com.marufalam.preschoollearning.fragments.quiz.QuizFragment;
 import com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
 
 
 public class FindQFragment extends Fragment implements View.OnClickListener {
@@ -94,7 +89,7 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
 
 
         nextbtn.setClickable(false);
-        countDownTimer = new CountDownTimer(60000, 1000) {
+        countDownTimer = new CountDownTimer(6000, 1000) {
             @SuppressLint({"SetTextI18n", "DefaultLocale"})
             @Override
             public void onTick(long millisUntilFinished) {
@@ -125,11 +120,14 @@ public class FindQFragment extends Fragment implements View.OnClickListener {
                 lp.dimAmount = 0.0F;
                 lp.screenBrightness = 1.0F;
                 getActivity().getWindow().setAttributes(lp);
-                dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+                dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
                 dialog.getWindow().findViewById(R.id.tryagainbtn).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Navigation.findNavController(view).navigate(R.id.alphabetFindQFragment);
+                        Navigation.findNavController(view).popBackStack();
+                        Toast.makeText(getActivity(), "Thanks for ,,,,,,", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+
 
                     }
                 });

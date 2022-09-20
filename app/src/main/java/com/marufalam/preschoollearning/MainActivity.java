@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    @Override
+  /*  @Override
     public void onBackPressed(){
         final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setMessage("Do you really want to close it ?");
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
 
-    }
+    }*/
 
 
 
