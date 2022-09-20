@@ -1,6 +1,10 @@
 package com.marufalam.preschoollearning.fragments.dashboard;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +19,8 @@ import com.marufalam.preschoollearning.R;
 
 import java.util.List;
 
-public class DashboardAdapter  extends RecyclerView.Adapter<DashboardAdapter.DashboardViewHolder> {
+public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.DashboardViewHolder> {
+    Context context;
     private final List<DashBordModel> categoryList;
 
     public DashboardAdapter(List<DashBordModel> categoryList) {
@@ -25,7 +30,7 @@ public class DashboardAdapter  extends RecyclerView.Adapter<DashboardAdapter.Das
     @NonNull
     @Override
     public DashboardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_item_row,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.category_item_row, parent, false);
         return new DashboardViewHolder(view);
     }
 
@@ -35,28 +40,35 @@ public class DashboardAdapter  extends RecyclerView.Adapter<DashboardAdapter.Das
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             switch (position){
-                 case 0:
-                     Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_alphabetFragment);
-                     break;
-                 case 1:
-                     Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_numberFragment);
-                     break;
-                 case 2:
-                     Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_weeksFragment);
-                     break;
-                 case 3:
-                     Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_bodyPartFragment);
-                     break;
-                 case 4:
-                     Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_colorFragment);
-                     break;
-                 case 5:
-                     Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_quizFragment);
-                     break;
+                switch (position) {
+                    case 0:
+                        Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_alphabetFragment);
+                        break;
+                    case 1:
+                        Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_numberFragment);
+                        break;
+                    case 2:
+                        Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_weekFragment);
+                        break;
+                    case 3:
+                        Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_bodyPartFragment);
+                        break;
+                    case 4:
+                        Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_colorFragment);
+                        break;
+                    case 5:
+                        Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_quizFragment);
+                        break;
+
+                    case 6:
+                        Navigation.findNavController(view).navigate(R.id.action_dashBoardFragment_to_drawingFragment);
+                         /*NavController navController = Navigation.findNavController(Activity, R.id.fragmentContainerView);
+                         navController.navigateUp();
+                         navController.navigate(R.id.drawingFragment);*/
+                        break;
 
 
-             }
+                }
             }
         });
     }
@@ -68,11 +80,13 @@ public class DashboardAdapter  extends RecyclerView.Adapter<DashboardAdapter.Das
 
     class DashboardViewHolder extends RecyclerView.ViewHolder {
         ImageView categoryImage;
+
         public DashboardViewHolder(@NonNull View itemView) {
             super(itemView);
             categoryImage = itemView.findViewById(R.id.categoryImg);
         }
 
     }
+
 
 }

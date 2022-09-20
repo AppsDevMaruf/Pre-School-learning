@@ -31,6 +31,8 @@ public class DashBordModel {
         items.add(new DashBordModel(R.drawable.bodyparts));
         items.add(new DashBordModel(R.drawable.colors));
         items.add(new DashBordModel(R.drawable.quiz));
+        items.add(new DashBordModel(R.drawable.drawing));
+
 
         return items;
     }
